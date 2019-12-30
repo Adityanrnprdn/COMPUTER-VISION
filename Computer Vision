@@ -1,0 +1,75 @@
+#read and show an image
+
+import cv2
+def main():
+    imagepath = r"C:\Users\cttc\Desktop\ADITYA AI&ML COURSE\image.jpg"
+    img = cv2.imread(imagepath)
+    cv2.imshow("ABBA HARMONIUM",img)
+    cv2.waitKey(0)
+    cv2.destoryAllWindows()    
+if __name__ == "__main__":
+    main()
+    
+#Save a color image to a folder in grayscale & change format/extension
+    
+import cv2
+
+img = cv2.imread(r"C:\Users\cttc\Desktop\ADITYA AI&ML COURSE\testimage2.jpg")
+
+cv2.imshow("humanface",img)
+cv2.waitKey(0) #0 is millisecond
+cv2.destroyAllWindows()
+
+print(img.shape) #retruns length,
+print(img.size) #number of elements
+
+outpath = r"C:\Users\cttc\Desktop\ADITYA AI&ML COURSE\testimage2_new.jpg"
+cv2.imwrite(outpath,img)
+
+blur= cv2.blur(img,(10,10))   #average blur
+cv2.imshow("humanface",blur)
+cv2.waitKey(0)
+cv2.destroyAllWindows
+
+#ALTERNATE FOR BLUR SING GUSSIAN BLUR
+gussian_blur = cv2.GaussianBlur(img,(5,5),0) #REMOVES GUSSIAN NOISE
+cv2.imshow("humanface",gussian_blur)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+#CANNY EDGE DETECTION \ DETECTION OF DIFFERET COLOR
+edges = cv2.Canny(img,100,200)
+cv2.imshow("humanface",edges)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+#RESIZING
+resized=cv2.resize(img,(1020,720))
+cv2.imshow("humanface",resized)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+#PLOTTING GRID ACROSS IMAGE
+
+import matplotlib.pyplot as plt
+plt.grid()
+plt.imshow(img)
+plt.show()
+
+img=cv2.imread(r"C:\Users\cttc\Desktop\ADITYA AI&ML COURSE\testimage2.jpg")
+#detecting face
+#( X Y X+le Y+height)
+image = cv2.rectangle(img,(120,10),(400,350),(255,255,00),2)
+cv2.imshow("humanface",image)
+cv2.waitKey(0)
+cv2.destroyllWindows()
+
+#for marking circle in face detection
+img=cv2.imread(r"C:\Users\cttc\Desktop\ADITYA AI&ML COURSE\testimage2.jpg")
+                # (x-axis-centre,y-axis height),radius,(original color)
+image=cv2.circle(img,(270,200), 120, (255,255,00),2)
+cv2.imshow("humanface",image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+
